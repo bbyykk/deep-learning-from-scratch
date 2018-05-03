@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-def function_1(x):
-    return x**2.0 + x
+def func_y(x):
+    return x**2.0
 
 class DiffShow:
     def numerical_diff(self, f, x):
@@ -12,7 +12,7 @@ class DiffShow:
     def show_overlap(self, f, x):
 
         y = f(x)
-        dy = [ self.numerical_diff(function_1,i) for i in x ]
+        dy = [ self.numerical_diff(func_y,i) for i in x ]
 
         fig, ax1 = plt.subplots()
         ax1.plot(x, y, color='red')
@@ -31,7 +31,7 @@ class DiffShow:
     def show_updown(self, f, x):
 
         y = f(x)
-        dy = [ self.numerical_diff(function_1,i) for i in x ]
+        dy = [ self.numerical_diff(func_y,i) for i in x ]
 
         plt.subplot(2, 1, 1)
         plt.plot(x, y, '-', lw=2)
@@ -81,7 +81,7 @@ class DiffShow:
 import numpy as np
 import matplotlib.pylab as plt
 
-x = np.arange(-2.0, 1.0, 0.1)
-#DiffShow().show_overlap(function_1, x)
-#DiffShow().show_updown(function_1, x)
-DiffShow().draw_slope_at(function_1, x, 0.5)
+x = np.arange(-2.0, 2.0, 0.1)
+#DiffShow().show_overlap(func_y, x)
+#DiffShow().show_updown(func_y, x)
+DiffShow().draw_slope_at(func_y, x, 0.5)
