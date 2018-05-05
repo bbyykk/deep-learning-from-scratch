@@ -4,7 +4,6 @@ import numpy as np
 import matplotlib.pylab as plt
 from matplotlib import cm
 from mpl_toolkits.mplot3d import Axes3D
-from matplotlib.ticker import LinearLocator, FormatStrFormatter
 
 
 def function_2(x):
@@ -18,10 +17,6 @@ if __name__ == '__main__':
     x0 = np.arange(-3, 3, 0.1)
     x1 = np.arange(-3, 3, 0.1)
     X, Y = np.meshgrid(x0, x1)
-    print(type(X))
-    print(X)
-    
-    print(Y)
 
     ## This is OK
     Z = X**2 +Y**2 
@@ -33,5 +28,5 @@ if __name__ == '__main__':
     fig = plt.figure()
     ax = fig.gca(projection='3d')
 
-    surf = ax.plot_surface(X, Y, Z, cmap=cm.coolwarm)
+    surf = ax.plot_surface(X, Y, Z)
     plt.show()
